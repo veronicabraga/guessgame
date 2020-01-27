@@ -10,24 +10,21 @@ public class Game {
     }
         public void start() {
 
-            int numPlayer;
+            int numPlayer = player.pickNumber(max);;
 
             System.out.println("Let's start the game!");
             int numGame = pickNumber(max);
             System.out.println("I chose a number from 0 to " + max + ". Guess what is the number!");
+            System.out.println("I, " + player.getName() + ", say that you chose number " + numPlayer + ".");
 
-            do {
+            while(numGame != numPlayer) {
+                System.out.println("Iiihhh, wrong number... Guess again!");
                 numPlayer = player.pickNumber(max);
                 System.out.println("I, " + player.getName() + ", say that you chose number " + numPlayer + ".");
-                if (numGame == numPlayer) {
-                    System.out.println("Wow! You guessed! Congratulations!");
-                } else {
-                    System.out.println("Iiihhh, wrong number... Guess again!");
 
-                }
+            }
 
-            } while(numGame != numPlayer);
-
+            System.out.println("Wow! You guessed! Congratulations!");
             System.out.println("I have chosen " + numGame + ".");
 
         }
