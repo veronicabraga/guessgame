@@ -2,9 +2,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //System.out.println(Randomizer.getRandom(10));
+        Player[] players = new Player[] {
+                new Player("Vero"),
+                new Player("Gabi"),
+                new Player("Giza")
 
-        Game game = new Game("Vero", 30);
+        };
+
+
+
+        Game game = new Game(30, players);
         game.start();
     }
 }
